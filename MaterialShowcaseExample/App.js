@@ -44,13 +44,13 @@ export default class App extends Component<{}> {
 
   render() {
     return <View style={styles.container}>
-        <Top style={styles.top} addTapTarget={showcaseTarget => {
+        <Top style={styles.top} addMaterialShowcaseTarget={showcaseTarget => {
             this.showcaseTargets.push(showcaseTarget);
           }} />
-        <Center style={styles.center} addTapTarget={showcaseTarget => {
+        <Center style={styles.center} addMaterialShowcaseTarget={showcaseTarget => {
             this.showcaseTargets.push(showcaseTarget);
           }} />
-        <Bottom style={styles.bottom} addTapTarget={showcaseTarget => {
+        <Bottom style={styles.bottom} addMaterialShowcaseTarget={showcaseTarget => {
             this.showcaseTargets.push(showcaseTarget);
           }} />
       </View>;
