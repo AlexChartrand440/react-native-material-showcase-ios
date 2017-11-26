@@ -23,7 +23,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		CE3C99111FC9749D0002A75F /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C99121FC9749D0002A75F /* libReact.a */; };
-		CE3C9AE51FC987460002A75F /* libRNMaterialShowcase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C99A41FC97B990002A75F /* libRNMaterialShowcase.a */; };
+		CE3C9D871FCB09EA0002A75F /* libRNMaterialShowcase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C99A41FC97B990002A75F /* libRNMaterialShowcase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +309,7 @@
 		CE3C998B1FC97B330002A75F /* MaterialShowcaseExample.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = MaterialShowcaseExample.xcworkspace; sourceTree = "<group>"; };
 		CE3C999F1FC97B990002A75F /* RNMaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMaterialShowcase.xcodeproj; path = "../node_modules/react-native-material-showcase-ios/ios/RNMaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
 		CE3C9AAC1FC983180002A75F /* Pods_RNMaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RNMaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3C9D8B1FCB0A3A0002A75F /* MaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,7 +317,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3C9AE51FC987460002A75F /* libRNMaterialShowcase.a in Frameworks */,
+				CE3C9D871FCB09EA0002A75F /* libRNMaterialShowcase.a in Frameworks */,
 				CE3C99111FC9749D0002A75F /* libReact.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
@@ -453,6 +454,7 @@
 		4CC9E16A2014E941F62E2794 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE3C9D8B1FCB0A3A0002A75F /* MaterialShowcase.framework */,
 				CE3C9AAC1FC983180002A75F /* Pods_RNMaterialShowcase.framework */,
 				CE3C998B1FC97B330002A75F /* MaterialShowcaseExample.xcworkspace */,
 				CE3C99121FC9749D0002A75F /* libReact.a */,

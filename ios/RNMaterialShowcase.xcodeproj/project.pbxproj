@@ -7,17 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E301AAE015780192348DB91 /* Pods_RNMaterialShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76058E2D6349260F8065754F /* Pods_RNMaterialShowcase.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNMaterialShowcase.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */; };
-		CEA8C5F21FC94EE4008C1F87 /* MaterialShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA8C5F31FC94EE4008C1F87 /* MaterialShowcase.framework */; };
+		CE3C9DA01FCB0C190002A75F /* MaterialShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE3C9D9E1FCB0BFD0002A75F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE3C9D9A1FCB0BFD0002A75F /* MaterialShowcase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE083A191EBACFEB0077666F;
+			remoteInfo = MaterialShowcase;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 10;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -26,13 +35,9 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNMaterialShowcase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNMaterialShowcase.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A95E567216610DEDCCBCB45 /* Pods-RNMaterialShowcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMaterialShowcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNMaterialShowcase/Pods-RNMaterialShowcase.debug.xcconfig"; sourceTree = "<group>"; };
-		76058E2D6349260F8065754F /* Pods_RNMaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNMaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98311C97A3090CA490E635A5 /* Pods-RNMaterialShowcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNMaterialShowcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNMaterialShowcase/Pods-RNMaterialShowcase.release.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNMaterialShowcase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNMaterialShowcase.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNMaterialShowcase.m; sourceTree = "<group>"; };
-		CEA8C58B1FC947A7008C1F87 /* MaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA8C5F31FC94EE4008C1F87 /* MaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3C9D9A1FCB0BFD0002A75F /* MaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MaterialShowcase.xcodeproj; path = "../../../../ios/material-showcase-ios/MaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA8C5F21FC94EE4008C1F87 /* MaterialShowcase.framework in Frameworks */,
-				6E301AAE015780192348DB91 /* Pods_RNMaterialShowcase.framework in Frameworks */,
+				CE3C9DA01FCB0C190002A75F /* MaterialShowcase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +66,6 @@
 				B3E7B5881CC2AC0600A0062D /* RNMaterialShowcase.h */,
 				B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				E944503BA8B937EE1895E328 /* Pods */,
 				A0D57D123EAA8B7409EB7925 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -70,20 +73,17 @@
 		A0D57D123EAA8B7409EB7925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEA8C5F31FC94EE4008C1F87 /* MaterialShowcase.framework */,
-				CEA8C58B1FC947A7008C1F87 /* MaterialShowcase.framework */,
-				76058E2D6349260F8065754F /* Pods_RNMaterialShowcase.framework */,
+				CE3C9D9A1FCB0BFD0002A75F /* MaterialShowcase.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E944503BA8B937EE1895E328 /* Pods */ = {
+		CE3C9D9B1FCB0BFD0002A75F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A95E567216610DEDCCBCB45 /* Pods-RNMaterialShowcase.debug.xcconfig */,
-				98311C97A3090CA490E635A5 /* Pods-RNMaterialShowcase.release.xcconfig */,
+				CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,11 +93,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNMaterialShowcase" */;
 			buildPhases = (
-				E0EFE93E9199DAEB6C367D8A /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
-				D7F65C5BD365BBF68B102842 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,10 +126,17 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE3C9D9B1FCB0BFD0002A75F /* Products */;
+					ProjectRef = CE3C9D9A1FCB0BFD0002A75F /* MaterialShowcase.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNMaterialShowcase */,
@@ -139,41 +144,15 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D7F65C5BD365BBF68B102842 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNMaterialShowcase/Pods-RNMaterialShowcase-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+/* Begin PBXReferenceProxy section */
+		CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MaterialShowcase.framework;
+			remoteRef = CE3C9D9E1FCB0BFD0002A75F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E0EFE93E9199DAEB6C367D8A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNMaterialShowcase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -282,8 +261,8 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A95E567216610DEDCCBCB45 /* Pods-RNMaterialShowcase.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -294,13 +273,14 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNMaterialShowcase;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98311C97A3090CA490E635A5 /* Pods-RNMaterialShowcase.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -311,6 +291,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNMaterialShowcase;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

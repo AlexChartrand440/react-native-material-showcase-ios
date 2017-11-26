@@ -12,7 +12,7 @@
 RCT_EXPORT_MODULE()
 
 
-RCT_EXPORT_METHOD(ShowSequence:(NSString *)name location:(NSString *)location)
+RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
 {
 }
 
