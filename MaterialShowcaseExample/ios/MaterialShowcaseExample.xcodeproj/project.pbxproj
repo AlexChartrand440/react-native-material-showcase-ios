@@ -339,7 +339,6 @@
 		CE3C998B1FC97B330002A75F /* MaterialShowcaseExample.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = MaterialShowcaseExample.xcworkspace; sourceTree = "<group>"; };
 		CE3C999F1FC97B990002A75F /* RNMaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNMaterialShowcase.xcodeproj; path = "../node_modules/react-native-material-showcase-ios/ios/RNMaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
 		CE9865511FCC41A600E9C496 /* MaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MaterialShowcase.xcodeproj; path = "../node_modules/react-native-material-showcase-ios/ios/material-showcase-ios/MaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
-		CE9865581FCC41B300E9C496 /* MaterialShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MaterialShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,7 +484,6 @@
 		4CC9E16A2014E941F62E2794 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE9865581FCC41B300E9C496 /* MaterialShowcase.framework */,
 				CE3C998B1FC97B330002A75F /* MaterialShowcaseExample.xcworkspace */,
 				CE3C99121FC9749D0002A75F /* libReact.a */,
 			);
