@@ -300,28 +300,35 @@ extension MaterialShowcase {
   /// Create a copy view of target view
   /// It helps us not to affect the original target view
   private func addTarget(at center: CGPoint) {
-//    targetCopyView = targetView.copyView()
     targetCopyView = targetView
 
     if shouldSetTintColor {
       targetCopyView.setTintColor(targetTintColor, recursive: true)
       
-      if targetCopyView is UIButton {
+      if targetView is UIButton {
+        targetCopyView = targetView.copyView()
+
         let button = targetView as! UIButton
         let buttonCopy = targetCopyView as! UIButton
         buttonCopy.setImage(button.image(for: .normal)?.withRenderingMode(.alwaysTemplate), for: .normal)
         buttonCopy.setTitleColor(targetTintColor, for: .normal)
         buttonCopy.isEnabled = true
       } else if targetCopyView is UIImageView {
+        targetCopyView = targetView.copyView()
+
         let imageView = targetView as! UIImageView
         let imageViewCopy = targetCopyView as! UIImageView
         imageViewCopy.image = imageView.image?.withRenderingMode(.alwaysTemplate)
       } else if let imageViewCopy = targetCopyView.subviews.first as? UIImageView,
         let labelCopy = targetCopyView.subviews.last as? UILabel {
+        targetCopyView = targetView.copyView()
+
         let imageView = targetView.subviews.first as! UIImageView
         imageViewCopy.image = imageView.image?.withRenderingMode(.alwaysTemplate)
         labelCopy.textColor = targetTintColor
       } else if let label = targetCopyView as? UILabel {
+        targetCopyView = targetView.copyView()
+
         label.textColor = targetTintColor
       }
     }
