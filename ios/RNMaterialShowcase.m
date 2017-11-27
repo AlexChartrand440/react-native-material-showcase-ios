@@ -14,6 +14,8 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
 {
+    NSLog(@"");
+    MaterialShowcase *materialShowcase = [[MaterialShowcase alloc] init];
 }
 
 @end

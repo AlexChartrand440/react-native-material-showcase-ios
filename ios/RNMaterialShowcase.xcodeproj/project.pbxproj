@@ -8,12 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* RNMaterialShowcase.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */; };
-		CE3C9DA01FCB0C190002A75F /* MaterialShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */; };
-		CE9864FD1FCC321700E9C496 /* MaterialShowcase+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9864F61FCC321700E9C496 /* MaterialShowcase+Calculations.swift */; };
-		CE9864FE1FCC321700E9C496 /* MaterialShowcaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9864F81FCC321700E9C496 /* MaterialShowcaseController.swift */; };
-		CE9864FF1FCC321700E9C496 /* MaterialShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9864F91FCC321700E9C496 /* MaterialShowcase.swift */; };
-		CE9865001FCC321700E9C496 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9864FA1FCC321700E9C496 /* Utility.swift */; };
-		CE9865011FCC321700E9C496 /* MaterialShowcaseInstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9864FB1FCC321700E9C496 /* MaterialShowcaseInstructionView.swift */; };
+		CE9865441FCC3FDA00E9C496 /* MaterialShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,13 +38,6 @@
 		B3E7B5881CC2AC0600A0062D /* RNMaterialShowcase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNMaterialShowcase.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNMaterialShowcase.m; sourceTree = "<group>"; };
 		CE3C9D9A1FCB0BFD0002A75F /* MaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MaterialShowcase.xcodeproj; path = "../../../../ios/material-showcase-ios/MaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
-		CE9864F61FCC321700E9C496 /* MaterialShowcase+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MaterialShowcase+Calculations.swift"; sourceTree = "<group>"; };
-		CE9864F71FCC321700E9C496 /* MaterialShowcase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialShowcase.h; sourceTree = "<group>"; };
-		CE9864F81FCC321700E9C496 /* MaterialShowcaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialShowcaseController.swift; sourceTree = "<group>"; };
-		CE9864F91FCC321700E9C496 /* MaterialShowcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialShowcase.swift; sourceTree = "<group>"; };
-		CE9864FA1FCC321700E9C496 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		CE9864FB1FCC321700E9C496 /* MaterialShowcaseInstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialShowcaseInstructionView.swift; sourceTree = "<group>"; };
-		CE9864FC1FCC321700E9C496 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3C9DA01FCB0C190002A75F /* MaterialShowcase.framework in Frameworks */,
+				CE9865441FCC3FDA00E9C496 /* MaterialShowcase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +63,6 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				CE9864F51FCC321700E9C496 /* MaterialShowcase */,
 				B3E7B5881CC2AC0600A0062D /* RNMaterialShowcase.h */,
 				B3E7B5891CC2AC0600A0062D /* RNMaterialShowcase.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -97,21 +84,6 @@
 				CE3C9D9F1FCB0BFD0002A75F /* MaterialShowcase.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CE9864F51FCC321700E9C496 /* MaterialShowcase */ = {
-			isa = PBXGroup;
-			children = (
-				CE9864F61FCC321700E9C496 /* MaterialShowcase+Calculations.swift */,
-				CE9864F71FCC321700E9C496 /* MaterialShowcase.h */,
-				CE9864F81FCC321700E9C496 /* MaterialShowcaseController.swift */,
-				CE9864F91FCC321700E9C496 /* MaterialShowcase.swift */,
-				CE9864FA1FCC321700E9C496 /* Utility.swift */,
-				CE9864FB1FCC321700E9C496 /* MaterialShowcaseInstructionView.swift */,
-				CE9864FC1FCC321700E9C496 /* Info.plist */,
-			);
-			name = MaterialShowcase;
-			path = "material-showcase-ios/MaterialShowcase";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,12 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9865001FCC321700E9C496 /* Utility.swift in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNMaterialShowcase.m in Sources */,
-				CE9864FF1FCC321700E9C496 /* MaterialShowcase.swift in Sources */,
-				CE9864FD1FCC321700E9C496 /* MaterialShowcase+Calculations.swift in Sources */,
-				CE9864FE1FCC321700E9C496 /* MaterialShowcaseController.swift in Sources */,
-				CE9865011FCC321700E9C496 /* MaterialShowcaseInstructionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,17 +262,20 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = RNMaterialShowcase;
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -313,17 +283,20 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = RNMaterialShowcase;
 				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
