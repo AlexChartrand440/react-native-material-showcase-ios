@@ -1,7 +1,8 @@
 #import "RNMaterialShowcase.h"
-#import <MaterialShowcase/MaterialShowcase-Swift.h>
 
 @implementation RNMaterialShowcase
+
+@synthesize delegate;
 
 @synthesize bridge = _bridge;
 
@@ -21,10 +22,20 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
     [materialShowcase setTargetViewWithView: target];
     [materialShowcase setPrimaryText: @"Action 1"];
     [materialShowcase setSecondaryText: @"Click here to go into details"];
+        
+    // When dismissing, delegate should be declared.
+    [materialShowcase setDelegate: self];
 
     [materialShowcase showWithAnimated:true completion:^() {
         NSLog(@"");
     }];
+}
+
+- (void)showCaseWillDismissWithShowcase:(MaterialShowcase *)materialShowcase {
+    NSLog(@"");
+}
+- (void)showCaseDidDismissWithShowcase:(MaterialShowcase *)materialShowcase {
+    NSLog(@"");
 }
 
 RCT_EXPORT_METHOD(ShowFor:(NSInteger *)view props:(NSDictionary *)props)
@@ -38,7 +49,6 @@ RCT_EXPORT_METHOD(ShowFor:(NSInteger *)view props:(NSDictionary *)props)
     
     [materialShowcase showWithAnimated:true completion:^() {}];
 }
-
 
 @end
 
