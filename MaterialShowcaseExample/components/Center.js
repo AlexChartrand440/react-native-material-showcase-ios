@@ -13,10 +13,9 @@ class Center extends Component {
             this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
                   ref,
                   {
-                    title: "This is a target button 3",
-                    description:
-                      "We have the best targets, believe me",
-                    outerCircleColor: "outerCircleColorPrimary"
+                    primaryText: "This is a target button 3",
+                    secondaryText:
+                      "We have the best targets, believe me"
                   }
                 ));
           }}
@@ -28,10 +27,9 @@ class Center extends Component {
             this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
                   ref,
                   {
-                    title: "This is a target button 4",
-                    description:
-                      "We have the best targets, believe me",
-                    outerCircleColor: "outerCircleColorSecondary"
+                    primaryText: "This is a target button 4",
+                    secondaryText:
+                      "We have the best targets, believe me"
                   }
                 ));
           }}
@@ -43,10 +41,9 @@ class Center extends Component {
             this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
                   ref,
                   {
-                    title: "This is a target button 5",
-                    description:
-                      "We have the best targets, believe me",
-                    outerCircleColor: "outerCircleColorPrimary"
+                    primaryText: "This is a target button 5",
+                    secondaryText:
+                      "We have the best targets, believe me"
                   }
                 ));
           }}

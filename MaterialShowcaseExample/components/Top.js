@@ -12,21 +12,26 @@ class Top extends Component {
           ref={ref => {
             this.button1 = ref
 
-            this.props.addMaterialShowcaseTarget &&
-              this.props.addMaterialShowcaseTarget(
-                MaterialShowcase.forView(ref, {
-                  title: 'This is a target button 1',
-                  description: 'We have the best targets, believe me',
-                  outerCircleColor: 'outerCircleColorPrimary'
-                })
-              )
+            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+                  ref,
+                  {
+                    primaryText: "This is a target button 1",
+                    secondaryText:
+                      "We have the best targets, believe me",
+                    targetTintColor: "#3f52ae"
+                  }
+                ));
           }}
           onPress={() => {
-            let targetView = MaterialShowcase.forView(this.button1, {
-              title: "This is a target button 1",
-              description: "We have the best targets, believe me",
-              outerCircleColor: "outerCircleColorPrimary"
-            });
+            let targetView = MaterialShowcase.forView(
+              this.button1,
+              {
+                primaryText: "This is a target button 1",
+                secondaryText:
+                  "We have the best targets, believe me",
+                backgroundPromptColor: "#3f52ae"
+              }
+            );
 
             MaterialShowcaseView.ShowFor(targetView);
           }}
@@ -34,14 +39,15 @@ class Top extends Component {
         <Button
           title={'Top Right'}
           ref={ref => {
-            this.props.addMaterialShowcaseTarget &&
-              this.props.addMaterialShowcaseTarget(
-                MaterialShowcase.forView(ref, {
-                  title: 'This is a target button 2',
-                  description: 'We have the best targets, believe me',
-                  outerCircleColor: 'outerCircleColorSecondary'
-                })
-              )
+            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+                  ref,
+                  {
+                    primaryText: "This is a target button 2",
+                    secondaryText:
+                      "We have the best targets, believe me",
+                    backgroundPromptColor: "#f24481"
+                  }
+                ));
           }}
           onPress={() => {}}
         />

@@ -118,11 +118,77 @@ RCT_EXPORT_METHOD(ShowFor:(NSNumber *)view props:(NSDictionary *)props)
     
     MaterialShowcase *materialShowcase = [[MaterialShowcase alloc] init];
     UIView *target = [self.bridge.uiManager viewForReactTag: view];
+
+    NSString *primaryText = [props objectForKey: @"primaryText"];
+    NSString *secondaryText = [props objectForKey: @"secondaryText"];
+
+    // Background
+    UIColor *backgroundPromptColor;
+    float backgroundPromptColorAlpha = 0.96;
+
+    // Target
+    UIColor *targetTintColor;
+    float targetHolderRadius = 44;
+    UIColor *targetHolderColor;
+
+    // Text
+    UIColor *primaryTextColor;
+    UIColor *secondaryTextColor;
+    float primaryTextSize = 20;
+    float secondaryTextSize = 15;
+//    showcase.primaryTextFont = UIFont.boldSystemFont(ofSize: primaryTextSize)
+//    showcase.secondaryTextFont = UIFont.systemFont(ofSize: secondaryTextSize)
+
+    // Animation
+    float aniComeInDuration = 0.5; // unit: second
+    float aniGoOutDuration = 0.5; // unit: second
+    float aniRippleScale = 1.5;
+    UIColor *aniRippleColor;
+    float aniRippleAlpha = 0.2;
+
+    NSString *backgroundPromptColorValue = [props objectForKey:@"backgroundPromptColor"];
+    if (backgroundPromptColorValue != nil) {
+        backgroundPromptColor = [UIColor fromHexWithHexString: backgroundPromptColorValue];
+    }
+    
+    NSString *targetTintColorValue = [props objectForKey:@"targetTintColor"];
+    if (targetTintColorValue != nil) {
+        targetTintColor = [UIColor fromHexWithHexString: targetTintColorValue];
+    }
+
+    NSString *targetHolderColorValue = [props objectForKey:@"targetHolderColor"];
+    if (targetHolderColorValue != nil) {
+        targetHolderColor = [UIColor fromHexWithHexString: targetHolderColorValue];
+    }
+
+    NSString *primaryTextColorValue = [props objectForKey:@"primaryTextColor"];
+    if (primaryTextColorValue != nil) {
+        primaryTextColor = [UIColor fromHexWithHexString: primaryTextColorValue];
+    }
+
+    NSString *secondaryTextColorValue = [props objectForKey:@"secondaryTextColor"];
+    if (secondaryTextColorValue != nil) {
+        secondaryTextColor = [UIColor fromHexWithHexString: secondaryTextColorValue];
+    }
+
+    
+    [materialShowcase setPrimaryText: primaryText];
+    [materialShowcase setSecondaryText: secondaryText];
+
+    if (backgroundPromptColor != nil) {
+        [materialShowcase setBackgroundColor: backgroundPromptColor];
+    } if (targetTintColor != nil) {
+        [materialShowcase setTargetTintColor: targetTintColor];
+    } if (targetHolderColor != nil) {
+        [materialShowcase setTargetHolderColor: targetHolderColor];
+    } if (primaryTextColor != nil) {
+        [materialShowcase setPrimaryTextColor: primaryTextColor];
+    } if (secondaryTextColor != nil) {
+        [materialShowcase setSecondaryTextColor: secondaryTextColor];
+    }
+
     
     [materialShowcase setTargetViewWithView: target];
-    [materialShowcase setPrimaryText: @"Action 1"];
-    [materialShowcase setSecondaryText: @"Click here to go into details"];
-
     [materialShowcase setDelegate: self];
 
     return materialShowcase;
