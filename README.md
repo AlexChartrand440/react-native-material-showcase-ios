@@ -13,6 +13,16 @@ Before we dive into on how to use this library. We would like to thank all the c
 
 - `$ react-native link react-native-material-showcase-ios`
 
+- Add [material-showcase-ios](https://github.com/aromajoin/material-showcase-ios) in Embedded Binaries & Linked Frameworks and Libraries. You can find this library from below path:
+
+```node_modules/react-native-material-showcase-ios/ios/material-showcase-ios/MaterialShowcase.xcodeproj```
+
+Please find below screenshot reference for the same:
+
+<img src="https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif?raw=true" alt="Video 1"/>
+
+
+
 #### [Manual Installation](./Installation.md)
 
 ## API's
