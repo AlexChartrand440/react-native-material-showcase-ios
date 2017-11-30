@@ -19,7 +19,7 @@ Before we dive into on how to use this library. We would like to thank all the c
 
 Please find below screenshot reference for the same:
 
-<img src="https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif?raw=true" alt="Video 1"/>
+<img src="https://raw.githubusercontent.com/prscX/react-native-material-showcase-ios/master/MaterialShowcaseExample/img/linking.png" alt="Video 1"/>
 
 
 
