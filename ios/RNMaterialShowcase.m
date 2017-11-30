@@ -88,18 +88,20 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
 - (void)showCaseDidDismissWithShowcase:(MaterialShowcase *)materialShowcase {
     NSLog(@"");
     
-    NSString *removeTargetKey = [ [targets allKeys] objectAtIndex: 0];
+    NSArray *targetKeys = [targets allKeys];
+    if (targetKeys.count <= 0) {
+        return;
+    }
     
+    NSString *removeTargetKey = [targetKeys objectAtIndex: 0];
     [targets removeObjectForKey: removeTargetKey];
 
-    NSArray *targetKeys = [targets allKeys];
     NSMutableArray *viewIds = [[NSMutableArray alloc] init];
-    
     NSMutableDictionary *props = [[NSMutableDictionary alloc] init];
     
-    for (NSString *view in targetKeys) {
+    for (NSString *view in [targets allKeys]) {
         [viewIds addObject: [NSNumber numberWithLongLong:[view longLongValue]]];
-        [props setObject:(NSDictionary *)[targets objectForKey:view] forKey:view];
+        [props setObject:(NSDictionary *)[targets objectForKey: view] forKey:view];
     }
     
     if ([viewIds count] > 0) {
