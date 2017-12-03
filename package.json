@@ -3,6 +3,10 @@
   "name": "react-native-material-showcase-ios",
   "version": "0.0.1",
   "description": "React Native Bridge for iOS Aromajoin/Material-Showcase-iOS",
+  "repository": { 
+    "type": "git",
+    "url": "https://github.com/prscX/react-native-material-showcase-ios.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
