@@ -109,7 +109,7 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
     }
 }
 
-RCT_EXPORT_METHOD(ShowFor:(NSNumber *)view props:(NSDictionary *)props)
+RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
 {
     MaterialShowcase *materialShowcase = [self generateMaterialShowcase:view props:props];
     
