@@ -2,55 +2,55 @@ import { findNodeHandle, NativeModules } from "react-native";
 
 const { RNMaterialShowcase } = NativeModules;
 
-class MaterialShowcaseView {
+class AppTour {
   static ShowSequence(sequence) {
-    let materialShowcaseTargets = sequence.getAll();
+    let appTourTargets = sequence.getAll();
 
     let viewIds = [];
     let props = {};
 
-    materialShowcaseTargets &&
-      materialShowcaseTargets.forEach((materialShowcaseTarget, key, materialShowcaseTargets) => {
-        viewIds.push(materialShowcaseTarget.view);
-        props[key] = materialShowcaseTarget.props;
+    appTourTargets &&
+      appTourTargets.forEach((appTourTarget, key, appTourTargets) => {
+        viewIds.push(appTourTarget.view);
+        props[key] = appTourTarget.props;
       });
 
     RNMaterialShowcase.ShowSequence(viewIds, props);
   }
 
-  static ShowFor(materialShowcaseTarget) {
-    RNMaterialShowcase.ShowFor(materialShowcaseTarget.view, materialShowcaseTarget.props);
+  static ShowFor(appTourTarget) {
+    RNMaterialShowcase.ShowFor(appTourTarget.view, appTourTarget.props);
   }
 }
 
-class MaterialShowcaseSequence {
+class AppTourSequence {
   constructor() {
-    this.materialShowcaseTargets = new Map();
+    this.appTourTargets = new Map();
   }
 
-  add(materialShowcaseTarget) {
-    this.materialShowcaseTargets.set(materialShowcaseTarget.view, materialShowcaseTarget);
+  add(appTourTarget) {
+    this.appTourTargets.set(appTourTarget.view, appTourTarget);
   }
 
-  remove(materialShowcaseTarget) {
-    this.materialShowcaseTargets.delete(materialShowcaseTarget.view);
+  remove(appTourTarget) {
+    this.appTourTargets.delete(appTourTarget.view);
   }
 
   removeAll() {
-    this.materialShowcaseTargets = new Map();
+    this.appTourTargets = new Map();
   }
 
-  get(materialShowcaseTarget) {
-    return this.materialShowcaseTargets.get(materialShowcaseTarget);
+  get(appTourTarget) {
+    return this.appTourTargets.get(appTourTarget);
   }
 
   getAll() {
-    return this.materialShowcaseTargets;
+    return this.appTourTargets;
   }
 }
 
-class MaterialShowcase {
-  static forView(view, props) {
+class AppTourView {
+  static for(view, props) {
     return {
       view: findNodeHandle(view),
       props: props
@@ -58,4 +58,4 @@ class MaterialShowcase {
   }
 }
 
-export { MaterialShowcase, MaterialShowcaseSequence, MaterialShowcaseView }
+export { AppTourView, AppTourSequence, AppTour };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
 
-import { MaterialShowcase } from 'react-native-material-showcase-ios'
+import { AppTourView } from 'react-native-material-showcase-ios'
 
 class Center extends Component {
   render() {
@@ -10,7 +10,7 @@ class Center extends Component {
         <Button
           title={'Center Left'}
           ref={ref => {
-            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 3",
@@ -24,7 +24,7 @@ class Center extends Component {
         <Button
           title={'Center Center'}
           ref={ref => {
-            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 4",
@@ -38,7 +38,7 @@ class Center extends Component {
         <Button
           title={'Center Right'}
           ref={ref => {
-            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 5",

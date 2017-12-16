@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
 
-import { MaterialShowcase } from 'react-native-material-showcase-ios'
+import { AppTourView } from 'react-native-material-showcase-ios'
 
 class Bottom extends Component {
   render() {
@@ -10,7 +10,7 @@ class Bottom extends Component {
         <Button
           title={'Bottom Left'}
           ref={ref => {
-            this.props.addMaterialShowcase && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTour && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 6",
@@ -24,7 +24,7 @@ class Bottom extends Component {
         <Button
           title={'Bottom Right'}
           ref={ref => {
-            this.props.addMaterialShowcase && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTour && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 7",

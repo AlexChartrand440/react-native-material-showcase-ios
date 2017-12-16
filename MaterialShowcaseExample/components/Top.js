@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
 
-import { MaterialShowcaseView, MaterialShowcase } from "react-native-material-showcase-ios";
+import { AppTour, AppTourView } from "react-native-material-showcase-ios";
 
 class Top extends Component {
   render() {
@@ -12,7 +12,7 @@ class Top extends Component {
           ref={ref => {
             this.button1 = ref
 
-            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 1",
@@ -23,7 +23,7 @@ class Top extends Component {
                 ));
           }}
           onPress={() => {
-            let targetView = MaterialShowcase.forView(
+            let targetView = AppTourView.for(
               this.button1,
               {
                 primaryText: "This is a target button 1",
@@ -33,13 +33,13 @@ class Top extends Component {
               }
             );
 
-            MaterialShowcaseView.ShowFor(targetView);
+            AppTour.ShowFor(targetView);
           }}
         />
         <Button
           title={'Top Right'}
           ref={ref => {
-            this.props.addMaterialShowcaseTarget && this.props.addMaterialShowcaseTarget(MaterialShowcase.forView(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 2",

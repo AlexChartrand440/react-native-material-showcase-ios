@@ -8,9 +8,9 @@ import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
 
 import {
-  MaterialShowcase,
-  MaterialShowcaseSequence,
-  MaterialShowcaseView
+  AppTour,
+  AppTourSequence,
+  AppTourView
 } from "react-native-material-showcase-ios";
 
 import Top from "./components/Top";
@@ -28,30 +28,30 @@ export default class App extends Component<{}> {
   constructor(props) {
     super(props);
 
-    this.showcaseTargets = [];
+    this.appTourTargets = [];
   }
 
   componentDidMount() {
     setTimeout(() => {
-      let materialShowcaseSequence = new MaterialShowcaseSequence();
-      this.showcaseTargets.forEach(showcaseTarget => {
-        materialShowcaseSequence.add(showcaseTarget);
+      let appTourSequence = new AppTourSequence();
+      this.appTourTargets.forEach(appTourTarget => {
+        appTourSequence.add(appTourTarget);
       });
 
-      MaterialShowcaseView.ShowSequence(materialShowcaseSequence);
+      AppTour.ShowSequence(appTourSequence);
     }, 1000);
   }
 
   render() {
     return <View style={styles.container}>
-        <Top style={styles.top} addMaterialShowcaseTarget={showcaseTarget => {
-            this.showcaseTargets.push(showcaseTarget);
+        <Top style={styles.top} addAppTourTarget={appTourTarget => {
+            this.appTourTargets.push(appTourTarget);
           }} />
-        <Center style={styles.center} addMaterialShowcaseTarget={showcaseTarget => {
-            this.showcaseTargets.push(showcaseTarget);
+        <Center style={styles.center} addAppTourTarget={appTourTarget => {
+            this.appTourTargets.push(appTourTarget);
           }} />
-        <Bottom style={styles.bottom} addMaterialShowcaseTarget={showcaseTarget => {
-            this.showcaseTargets.push(showcaseTarget);
+        <Bottom style={styles.bottom} addAppTourTarget={appTourTarget => {
+            this.appTourTargets.push(appTourTarget);
           }} />
       </View>;
   }

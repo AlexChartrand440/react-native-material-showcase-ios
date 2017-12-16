@@ -7,6 +7,10 @@ Before we dive into on how to use this library. We would like to thank all the c
 <img src="https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif?raw=true" width="280" height="498" alt="Video 1"/>
 
 
+#### Android Platform
+Please refer [react-native-taptargetview](https://github.com/prscX/react-native-taptargetview) for the Android support
+
+
 ## Installation
 
 - `$ npm install react-native-material-showcase-ios --save`
@@ -22,41 +26,44 @@ Please find below screenshot reference for the same:
 <img src="https://raw.githubusercontent.com/prscX/react-native-material-showcase-ios/master/MaterialShowcaseExample/img/linking.png" alt="Video 1"/>
 
 
-
-#### [Manual Installation](./Installation.md)
-
 ## API's
 
-- MaterialShowcase.forView: MaterialShowcaseTarget
+- AppTourView.for: AppTourTarget
 ~~~~
-let materialShowcaseTarget = MaterialShowcase.forView(Button, {
-    title: 'This is a target button 1',
-    description: 'We have the best targets, believe me'
+let appTourTarget = AppTourView.for(Button, {
+    primaryText: 'This is a target button 1',
+    secondaryText: 'We have the best targets, believe me'
 })
 
-MaterialShowcaseView.ShowFor(materialShowcaseTarget)
+> **Note:** App Tour Target Properties are same as defined by [KeepSafe/TapTargetView](https://github.com/KeepSafe/TapTargetView)
+
+
+AppTour.ShowFor(appTourTarget)
 ~~~~
 
-- MaterialShowcaseSequence
-    - add(MaterialShowcaseTarget)
-    - remove(MaterialShowcaseTarget)
+- AppTourSequence
+    - add(AppTourTarget)
+    - remove(AppTourTarget)
     - removeAll
-    - get(MaterialShowcaseTarget)
+    - get(AppTourTarget)
     - getAll
 
 ~~~~
-let materialShowcaseSequence = new MaterialShowcaseSequence()
-this.materialShowcaseTargets.forEach(materialShowcaseTarget => {
-materialShowcaseSequence.add(materialShowcaseTarget)
+let appTourSequence = new AppTourSequence()
+this.appTourTargets.forEach(appTourTarget => {
+appTourSequence.add(appTourTarget)
 })
 
-MaterialShowcaseView.ShowSequence(materialShowcaseSequence)
+AppTour.ShowSequence(appTourSequence)
 ~~~~
 
-- MaterialShowcaseView
-    - ShowFor(MaterialShowcaseTarget)
-    - ShowSequence(MaterialShowcaseTargets)
+- AppTour
+    - ShowFor(AppTourTarget)
+    - ShowSequence(AppTourTargets)
 
+
+# Breaking Changes
+- **0.0.2**: Changed API's to create same developer experience for both [react-native-material-showcase-ios](https://github.com/prscX/react-native-material-showcase-ios) & [https://github.com/prscX/react-native-taptargetview](react-native-taptargetview)
 
 # Contribution
 
