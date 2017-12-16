@@ -63,7 +63,7 @@ AppTour.ShowSequence(appTourSequence)
 
 
 # Breaking Changes
-- **0.0.2**: Changed API's to create same developer experience for both [react-native-material-showcase-ios](https://github.com/prscX/react-native-material-showcase-ios) & [https://github.com/prscX/react-native-taptargetview](react-native-taptargetview)
+- **0.0.2**: Changed API's to create same developer experience for both [react-native-material-showcase-ios](https://github.com/prscX/react-native-material-showcase-ios) & [react-native-taptargetview](https://github.com/prscX/react-native-taptargetview)
 
 # Contribution
 
