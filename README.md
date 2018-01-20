@@ -74,3 +74,26 @@ Any type of contribution will be very much appreciated
 Copyright @2017 Pranav Raj Singh Chauhan
 
 The React Native Material Showcase iOS is provided under the MIT License.
+
+
+## Other Contributions
+- React Native - Spruce: [react-native-spruce](https://github.com/prscX/react-native-spruce)
+
+![Screenshots](https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/extensibility-tests.gif)
+
+- React Native - App Tour Library: [react-native-taptargetview](https://github.com/prscX/react-native-taptargetview)
+
+![Screenshots](https://github.com/KeepSafe/TapTargetView/raw/master/.github/video.gif)
+
+- React Native - Shine Button: [react-native-shine-button](https://github.com/prscX/react-native-shine-button)
+
+![Screenshots](https://raw.githubusercontent.com/ChadCSong/ShineButton/master/demo_shine_others.gif)
+
+
+- Visual Code Essential Plugins: [vs-essential-plugins](https://github.com/prscX/vs-essential-plugins)
+
+![Screenshots](https://pbs.twimg.com/profile_images/922911523328081920/jEKFRPKV_400x400.jpg)
+
+- Prettier Pack: [prettier-pack](https://github.com/prscX/prettier-pack)
+
+![Screenshots](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
