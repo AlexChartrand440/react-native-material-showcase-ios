@@ -85,6 +85,10 @@ The React Native Material Showcase iOS is provided under the MIT License.
 
 ![Screenshots](https://github.com/KeepSafe/TapTargetView/raw/master/.github/video.gif)
 
+- React Native - Bottom Action Sheet: [react-native-bottom-action-sheet](https://github.com/prscX/react-native-bottom-action-sheet)
+
+![](https://github.com/rubensousa/BottomSheetBuilder/raw/master/screens/normal_demo.gif)
+
 - React Native - Shine Button: [react-native-shine-button](https://github.com/prscX/react-native-shine-button)
 
 ![Screenshots](https://raw.githubusercontent.com/ChadCSong/ShineButton/master/demo_shine_others.gif)
