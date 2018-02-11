@@ -10,7 +10,7 @@ class Bottom extends Component {
         <Button
           title={'Bottom Left'}
           ref={ref => {
-            this.props.addAppTour && this.props.addAppTourTarget(AppTourView.for(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 6",
@@ -24,7 +24,7 @@ class Bottom extends Component {
         <Button
           title={'Bottom Right'}
           ref={ref => {
-            this.props.addAppTour && this.props.addAppTourTarget(AppTourView.for(
+            this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
                     primaryText: "This is a target button 7",
