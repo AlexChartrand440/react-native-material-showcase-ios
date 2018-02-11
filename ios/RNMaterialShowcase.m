@@ -180,6 +180,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     if (backgroundPromptColor != nil) {
         [materialShowcase setBackgroundColor: backgroundPromptColor];
     } if (targetTintColor != nil) {
+        target.tintColor = targetTintColor;
         [materialShowcase setTargetTintColor: targetTintColor];
     } if (targetHolderColor != nil) {
         [materialShowcase setTargetHolderColor: targetHolderColor];
@@ -189,7 +190,6 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         [materialShowcase setSecondaryTextColor: secondaryTextColor];
     }
 
-    
     [materialShowcase setTargetViewWithView: target];
     [materialShowcase setDelegate: self];
 

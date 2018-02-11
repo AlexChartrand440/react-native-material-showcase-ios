@@ -23,15 +23,11 @@ class Top extends Component {
                 ));
           }}
           onPress={() => {
-            let targetView = AppTourView.for(
-              this.button1,
-              {
-                primaryText: "This is a target button 1",
-                secondaryText:
-                  "We have the best targets, believe me",
-                backgroundPromptColor: "#3f52ae"
-              }
-            );
+            let targetView = AppTourView.for(this.button1, {
+              primaryText: "This is a target button 1",
+              secondaryText: "We have the best targets, believe me",
+              backgroundPromptColor: "#3f52ae"
+            });
 
             AppTour.ShowFor(targetView);
           }}
@@ -39,6 +35,8 @@ class Top extends Component {
         <Button
           title={'Top Right'}
           ref={ref => {
+            this.button2 = ref;
+
             this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
                   {
@@ -49,7 +47,21 @@ class Top extends Component {
                   }
                 ));
           }}
-          onPress={() => {}}
+          onPress={() => {
+              let targetView = AppTourView.for(
+                this.button2,
+                {
+                  primaryText:
+                    "This is a target button 1",
+                  secondaryText:
+                    "We have the best targets, believe me",
+                  targetTintColor: "#f24481",
+                  backgroundPromptColor: "#FFFFFF"
+                }
+              );
+
+              AppTour.ShowFor(targetView);
+          }}
         />
       </View>
     )
