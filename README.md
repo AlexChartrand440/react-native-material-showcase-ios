@@ -1,10 +1,19 @@
+
+<p align="center">
+    <img src="https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif?raw=true" width="280" height="498" alt="Video 1"/>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-native-material-showcase-ios"><img src="http://img.shields.io/npm/v/react-native-material-showcase-ios.svg?style=flat" /></a>
+  <a href="https://github.com/prscX/react-native-material-showcase-ios/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
+  <a href="https://github.com/prscX/react-native-material-showcase-ios#License"><img src="https://img.shields.io/npm/l/react-native-material-showcase-ios.svg?style=flat" /></a>
+</p>
+
+
 # React Native Material Showcase iOS
 React Native Bridge for [aromajoin/material-showcase-ios](https://github.com/aromajoin/material-showcase-ios)
 
 Before we dive into on how to use this library. We would like to thank all the contributor of [aromajoin/material-showcase-ios](https://github.com/aromajoin/material-showcase-ios) for providing such a awesome nice, cool library
-
-
-<img src="https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif?raw=true" width="280" height="498" alt="Video 1"/>
 
 
 #### Android Platform
