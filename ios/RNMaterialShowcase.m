@@ -172,7 +172,11 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     if (secondaryTextColorValue != nil) {
         secondaryTextColor = [UIColor fromHexWithHexString: secondaryTextColorValue];
     }
-
+    
+    BOOL *isTapRecognizerForTagretViewValue = [[props objectForKey:@"isTapRecognizerForTagretView"] boolValue];
+    if (isTapRecognizerForTagretViewValue == TRUE) {
+        [materialShowcase setIsTapRecognizerForTagretView:TRUE];
+    }
     
     [materialShowcase setPrimaryText: primaryText];
     [materialShowcase setSecondaryText: secondaryText];
