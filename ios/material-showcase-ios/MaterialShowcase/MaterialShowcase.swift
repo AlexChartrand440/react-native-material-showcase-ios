@@ -52,6 +52,10 @@ public class MaterialShowcase: UIView {
   // Background
   public var backgroundPromptColor: UIColor!
   public var backgroundPromptColorAlpha: CGFloat!
+  // Tap zone settings
+  // - false: recognize tap from all displayed showcase.
+  // - true: recognize tap for targetView area only.
+  public var isTapRecognizerForTagretView: Bool = false
   // Target
   public var shouldSetTintColor: Bool = true
   public var targetTintColor: UIColor!
@@ -245,11 +249,18 @@ extension MaterialShowcase {
     instructionView.layoutIfNeeded()
     addBackground()
 
-    // Add gesture recognizer for both container and its subview
-    addGestureRecognizer(tapGestureRecoganizer())
     // Disable subview interaction to let users click to general view only
     for subView in subviews {
       subView.isUserInteractionEnabled = false
+    }
+    
+    if isTapRecognizerForTagretView {
+        //Add gesture recognizer for targetCopyView
+        targetCopyView.addGestureRecognizer(tapGestureRecoganizer())
+        targetCopyView.isUserInteractionEnabled = true
+    } else {
+        // Add gesture recognizer for both container and its subview
+        addGestureRecognizer(tapGestureRecoganizer())
     }
   }
   
@@ -301,11 +312,11 @@ extension MaterialShowcase {
   /// It helps us not to affect the original target view
   private func addTarget(at center: CGPoint) {
     targetCopyView = targetView.snapshotView(afterScreenUpdates: true)
-
+    
     if shouldSetTintColor {
       targetCopyView.setTintColor(targetTintColor, recursive: true)
       
-      if targetView is UIButton {
+      if targetCopyView is UIButton {
         let button = targetView as! UIButton
         let buttonCopy = targetCopyView as! UIButton
         buttonCopy.setImage(button.image(for: .normal)?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -408,7 +419,6 @@ extension MaterialShowcase {
       // Remove it from current screen
       self.removeFromSuperview()
     }
-
     if delegate != nil && delegate?.showCaseDidDismiss != nil {
       delegate?.showCaseDidDismiss?(showcase: self)
     }
