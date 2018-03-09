@@ -2,7 +2,7 @@
 #import <React/RCTEventDispatcher.h>
 
 NSString *const onStartShowStepEvent = @"onStartShowCaseEvent";
-NSString *const onShowStepEvent = @"onShowSequenceStepEvent";
+NSString *const onShowSequenceStepEvent = @"onShowSequenceStepEvent";
 NSString *const onFinishShowStepEvent = @"onFinishSequenceEvent";
 
 @implementation MutableOrderedDictionary {
@@ -109,7 +109,7 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
         [self.bridge.eventDispatcher sendDeviceEventWithName:onFinishShowStepEvent body:@{@"finish": @YES}];
     }
     else {
-        [self.bridge.eventDispatcher sendDeviceEventWithName:onShowStepEvent body:@{@"next_step": @YES}];
+        [self.bridge.eventDispatcher sendDeviceEventWithName:onShowSequenceStepEvent body:@{@"next_step": @YES}];
     }
     
     for (NSString *view in [targets allKeys]) {
@@ -216,4 +216,3 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
 }
 
 @end
-
