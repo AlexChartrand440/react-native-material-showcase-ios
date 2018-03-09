@@ -1,4 +1,9 @@
 #import "RNMaterialShowcase.h"
+#import <React/RCTEventDispatcher.h>
+
+NSString *const onStartShowStepEvent = @"onStartShowCaseEvent";
+NSString *const onShowStepEvent = @"onShowSequenceStepEvent";
+NSString *const onFinishShowStepEvent = @"onFinishSequenceEvent";
 
 @implementation MutableOrderedDictionary {
 @protected
@@ -77,9 +82,9 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
     for (NSNumber *view in views) {
         [targets setObject:[props objectForKey: [view stringValue]] forKey: [view stringValue]];
     }
-
+    
     NSString *showTargetKey = [ [targets allKeys] objectAtIndex: 0];
-    [self ShowFor:[NSNumber numberWithLongLong:[showTargetKey longLongValue]] props:[targets objectForKey:showTargetKey]];
+    [self ShowFor:[NSNumber numberWithLongLong:[showTargetKey longLongValue]] props:[targets objectForKey:showTargetKey] ];
 }
 
 - (void)showCaseWillDismissWithShowcase:(MaterialShowcase *)materialShowcase {
@@ -95,9 +100,17 @@ RCT_EXPORT_METHOD(ShowSequence:(NSArray *)views props:(NSDictionary *)props)
     
     NSString *removeTargetKey = [targetKeys objectAtIndex: 0];
     [targets removeObjectForKey: removeTargetKey];
-
+    
     NSMutableArray *viewIds = [[NSMutableArray alloc] init];
     NSMutableDictionary *props = [[NSMutableDictionary alloc] init];
+    BOOL isFinish = targetKeys.count <= 1;
+    
+    if (targetKeys.count <= 1) {
+        [self.bridge.eventDispatcher sendDeviceEventWithName:onFinishShowStepEvent body:@{@"finish": @YES}];
+    }
+    else {
+        [self.bridge.eventDispatcher sendDeviceEventWithName:onShowStepEvent body:@{@"next_step": @YES}];
+    }
     
     for (NSString *view in [targets allKeys]) {
         [viewIds addObject: [NSNumber numberWithLongLong:[view longLongValue]]];
@@ -113,41 +126,43 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
 {
     MaterialShowcase *materialShowcase = [self generateMaterialShowcase:view props:props];
     
-    [materialShowcase showWithAnimated:true completion:^() {}];
+    [materialShowcase showWithAnimated:true completion:^() {
+        [self.bridge.eventDispatcher sendDeviceEventWithName:onStartShowStepEvent body:@{@"start_step": @YES}];
+    }];
 }
 
 - (MaterialShowcase *)generateMaterialShowcase:(NSNumber *)view props:(NSDictionary *)props {
     
     MaterialShowcase *materialShowcase = [[MaterialShowcase alloc] init];
     UIView *target = [self.bridge.uiManager viewForReactTag: view];
-
+    
     NSString *primaryText = [props objectForKey: @"primaryText"];
     NSString *secondaryText = [props objectForKey: @"secondaryText"];
-
+    
     // Background
     UIColor *backgroundPromptColor;
     float backgroundPromptColorAlpha = 0.96;
-
+    
     // Target
     UIColor *targetTintColor;
     float targetHolderRadius = 44;
     UIColor *targetHolderColor;
-
+    
     // Text
     UIColor *primaryTextColor;
     UIColor *secondaryTextColor;
     float primaryTextSize = 20;
     float secondaryTextSize = 15;
-//    showcase.primaryTextFont = UIFont.boldSystemFont(ofSize: primaryTextSize)
-//    showcase.secondaryTextFont = UIFont.systemFont(ofSize: secondaryTextSize)
-
+    //    showcase.primaryTextFont = UIFont.boldSystemFont(ofSize: primaryTextSize)
+    //    showcase.secondaryTextFont = UIFont.systemFont(ofSize: secondaryTextSize)
+    
     // Animation
     float aniComeInDuration = 0.5; // unit: second
     float aniGoOutDuration = 0.5; // unit: second
     float aniRippleScale = 1.5;
     UIColor *aniRippleColor;
     float aniRippleAlpha = 0.2;
-
+    
     NSString *backgroundPromptColorValue = [props objectForKey:@"backgroundPromptColor"];
     if (backgroundPromptColorValue != nil) {
         backgroundPromptColor = [UIColor fromHexWithHexString: backgroundPromptColorValue];
@@ -157,30 +172,25 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     if (targetTintColorValue != nil) {
         targetTintColor = [UIColor fromHexWithHexString: targetTintColorValue];
     }
-
+    
     NSString *targetHolderColorValue = [props objectForKey:@"targetHolderColor"];
     if (targetHolderColorValue != nil) {
         targetHolderColor = [UIColor fromHexWithHexString: targetHolderColorValue];
     }
-
+    
     NSString *primaryTextColorValue = [props objectForKey:@"primaryTextColor"];
     if (primaryTextColorValue != nil) {
         primaryTextColor = [UIColor fromHexWithHexString: primaryTextColorValue];
     }
-
+    
     NSString *secondaryTextColorValue = [props objectForKey:@"secondaryTextColor"];
     if (secondaryTextColorValue != nil) {
         secondaryTextColor = [UIColor fromHexWithHexString: secondaryTextColorValue];
     }
     
-    BOOL *isTapRecognizerForTagretViewValue = [[props objectForKey:@"isTapRecognizerForTagretView"] boolValue];
-    if (isTapRecognizerForTagretViewValue == TRUE) {
-        [materialShowcase setIsTapRecognizerForTagretView:TRUE];
-    }
-    
     [materialShowcase setPrimaryText: primaryText];
     [materialShowcase setSecondaryText: secondaryText];
-
+    
     if (backgroundPromptColor != nil) {
         [materialShowcase setBackgroundColor: backgroundPromptColor];
     } if (targetTintColor != nil) {
@@ -193,10 +203,15 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     } if (secondaryTextColor != nil) {
         [materialShowcase setSecondaryTextColor: secondaryTextColor];
     }
-
+    
+    BOOL *isTapRecognizerForTagretViewValue = [[props objectForKey:@"isTapRecognizerForTagretView"] boolValue];
+    if (isTapRecognizerForTagretViewValue == TRUE) {
+        [materialShowcase setIsTapRecognizerForTagretView:TRUE];
+    }
+    
     [materialShowcase setTargetViewWithView: target];
     [materialShowcase setDelegate: self];
-
+    
     return materialShowcase;
 }
 
