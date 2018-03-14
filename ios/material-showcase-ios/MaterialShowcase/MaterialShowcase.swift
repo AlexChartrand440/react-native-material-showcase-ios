@@ -51,7 +51,7 @@ public class MaterialShowcase: UIView {
   
   // Background
   public var backgroundPromptColor: UIColor!
-  public var backgroundPromptColorAlpha: CGFloat!
+  public var backgroundPromptColorAlpha: CGFloat = 0.0
   // Tap zone settings
   // - false: recognize tap from all displayed showcase.
   // - true: recognize tap for targetView area only.
@@ -59,23 +59,25 @@ public class MaterialShowcase: UIView {
   // Target
   public var shouldSetTintColor: Bool = true
   public var targetTintColor: UIColor!
-  public var targetHolderRadius: CGFloat!
+  public var targetHolderRadius: CGFloat = 0.0
   public var targetHolderColor: UIColor!
   // Text
   public var primaryText: String!
   public var secondaryText: String!
   public var primaryTextColor: UIColor!
   public var secondaryTextColor: UIColor!
-  public var primaryTextSize: CGFloat!
-  public var secondaryTextSize: CGFloat!
+  public var primaryTextSize: CGFloat = 0.0
+  public var secondaryTextSize: CGFloat = 0.0
   public var primaryTextFont: UIFont?
   public var secondaryTextFont: UIFont?
+  public var primaryTextAlignment: NSTextAlignment = .left
+  public var secondaryTextAlignment: NSTextAlignment = .left
   // Animation
-  public var aniComeInDuration: TimeInterval!
-  public var aniGoOutDuration: TimeInterval!
-  public var aniRippleScale: CGFloat!
+  public var aniComeInDuration: TimeInterval = 0.0
+  public var aniGoOutDuration: TimeInterval = 0.0
+  public var aniRippleScale: CGFloat = 0.0
   public var aniRippleColor: UIColor!
-  public var aniRippleAlpha: CGFloat!
+  public var aniRippleAlpha: CGFloat = 0.0
   // Delegate
   public weak var delegate: MaterialShowcaseDelegate?
   
@@ -245,14 +247,22 @@ extension MaterialShowcase {
     addTargetRipple(at: center)
     addTargetHolder(at: center)
     addTarget(at: center)
+    
+    //In iPad version InstructionView was add to backgroundView
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        addBackground()
+    }
+    
     addInstructionView(at: center)
     instructionView.layoutIfNeeded()
-    addBackground()
 
-    // Disable subview interaction to let users click to general view only
-    for subView in subviews {
-      subView.isUserInteractionEnabled = false
+    //In iPhone version InstructionView was add to self view
+    if UIDevice.current.userInterfaceIdiom != .pad {
+        addBackground()
     }
+    
+    // Disable subview interaction to let users click to general view only
+    subviews.forEach({$0.isUserInteractionEnabled = false})
     
     if isTapRecognizerForTagretView {
         //Add gesture recognizer for targetCopyView
@@ -268,7 +278,7 @@ extension MaterialShowcase {
   private func addBackground() {
     let radius: CGFloat!
     
-    let center = getOuterCircleCenterPoint(for: targetCopyView)
+    let center = targetCopyView.center//getOuterCircleCenterPoint(for: targetCopyView)
     
     if UIDevice.current.userInterfaceIdiom == .pad {
       radius = 300.0
@@ -349,33 +359,64 @@ extension MaterialShowcase {
   private func addInstructionView(at center: CGPoint) {
     instructionView = MaterialShowcaseInstructionView()
     
+    instructionView.primaryTextAlignment = primaryTextAlignment
     instructionView.primaryTextFont = primaryTextFont
     instructionView.primaryTextSize = primaryTextSize
     instructionView.primaryTextColor = primaryTextColor
     instructionView.primaryText = primaryText
     
+    instructionView.secondaryTextAlignment = secondaryTextAlignment
     instructionView.secondaryTextFont = secondaryTextFont
     instructionView.secondaryTextSize = secondaryTextSize
     instructionView.secondaryTextColor = secondaryTextColor
     instructionView.secondaryText = secondaryText
     
     // Calculate x position
-    let xPosition = LABEL_MARGIN
+    var xPosition = LABEL_MARGIN
     
     // Calculate y position
     var yPosition: CGFloat!
     
-    if getTargetPosition(target: targetView, container: containerView) == .above {
-      yPosition = center.y + TEXT_CENTER_OFFSET
+    // Calculate instructionView width
+    var width : CGFloat
+    
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        width = backgroundView.frame.width - xPosition
+        
+        if backgroundView.frame.origin.x < 0 {
+            xPosition = abs(backgroundView.frame.origin.x) + xPosition
+        } else if (backgroundView.frame.origin.x + backgroundView.frame.size.width >
+            UIScreen.main.bounds.width) {
+            width = backgroundView.frame.size.width - (xPosition*2)
+        }
+        if xPosition + width > backgroundView.frame.size.width {
+            width = width - CGFloat(xPosition/2)
+        }
+        
+        if getTargetPosition(target: targetView, container: containerView) == .above {
+            yPosition = (backgroundView.frame.size.height/2) + TEXT_CENTER_OFFSET
+        } else {
+            yPosition = TEXT_CENTER_OFFSET + LABEL_DEFAULT_HEIGHT * 2
+        }
     } else {
-      yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 2
+        if getTargetPosition(target: targetView, container: containerView) == .above {
+            yPosition = center.y + TEXT_CENTER_OFFSET
+        } else {
+            yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 2
+        }
+        
+        width = containerView.frame.width - (xPosition + xPosition)
     }
     
     instructionView.frame = CGRect(x: xPosition,
                                 y: yPosition,
-                                width: containerView.frame.width - (xPosition + xPosition),
+                                width: width ,
                                 height: 0)
-    addSubview(instructionView)
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        backgroundView.addSubview(instructionView)
+    } else {
+        addSubview(instructionView)
+    }
   }
   
   /// Handles user's tap
@@ -425,9 +466,7 @@ extension MaterialShowcase {
   }
   
   private func recycleSubviews() {
-    for subview in subviews {
-      subview.removeFromSuperview()
-    }
+    subviews.forEach({$0.removeFromSuperview()})
   }
 }
 

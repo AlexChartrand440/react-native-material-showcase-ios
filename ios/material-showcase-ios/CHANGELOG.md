@@ -1,5 +1,14 @@
 Change Log
 ==========
+Version 0.5.1 *(2018-03-14)*
+-------------------------------
+* Fix the issue in which properties are missing in Objective-C project
+
+Version 0.5.0 *(2018-03-12)*
+--------------------------------
+* Fix out-of-screen text error on iPad
+* Add text alignment to support both LTR and RTL text
+
 Version 0.4.0 *(2018-02-22)*
 --------------------------------
 * Add target tap recognizer

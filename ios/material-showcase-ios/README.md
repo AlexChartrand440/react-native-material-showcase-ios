@@ -1,14 +1,15 @@
 # Material Showcase for iOS
 
-[![Download](https://img.shields.io/badge/pod-v0.4.0-blue.svg)](https://cocoapods.org/pods/MaterialShowcase)
+[![Download](https://img.shields.io/badge/pod-v0.5.1-blue.svg)](https://cocoapods.org/pods/MaterialShowcase)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)  
 
 **An elegant and beautiful tap showcase view for iOS apps based on Material Design Guidelines.**  
 
-![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif)
-![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo2.png)
-![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo3.png)
-![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo4.png)
+| ![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/material-showcase.gif) | ![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo2.png) |
+| ---------------------------------------- | ---------------------------------------- |
+| ![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo3.png) | ![Screenshots](https://github.com/aromajoin/material-showcase-ios/blob/master/art/demo4.png) |
+| ![Screenshots for Persian intro](https://raw.githubusercontent.com/Husseinhj/material-showcase-ios/feat/support_alignment/art/demo-persian.jpg) |                                          |
+
 
 ## Requirement
 * iOS 8.0+
@@ -20,9 +21,17 @@ You can install it by using CocoaPods. Please add the following line to your Pod
 pod 'MaterialShowcase'
 ```
 
+### Objective-C
+
+After installing `MaterialShowcase` pod, please follow the below instructions to set it up in Objective-C project.
+
+![Objective-C showcase](https://raw.githubusercontent.com/Husseinhj/material-showcase-ios/fix/objc_property/art/ObjectiveCSupportScreenshot.png)
+
+Using `#import "MaterialShowcase-Swift.h"` to import library to your class.
+
 ## Usage
 
-#### Basic
+### Basic
 ```swift
   let showcase = MaterialShowcase()
   showcase.setTargetView(view: button) // always required to set targetView
@@ -36,7 +45,7 @@ pod 'MaterialShowcase'
 ```
 **Note**: `showcase.show()` should be called after your views are placed correctly, for example inside UIViewController's  `viewWillAppear()` or `viewDidAppear()` function. You **SHOULD NOT** call it inside `viewDidLoad()` because views have not laid down correctly yet, `showcase` can not calculate these views positions and it results in unexpected errors.
 
-#### Supported Target Views
+### Supported target views
 There are several target view supported.  
 
 ```swift
@@ -69,8 +78,21 @@ There are several target view supported.
     }
   }
 ```
+### Support both LTR and RTL text alignment
+In default, text aligment is set to be left-to-right. If you want to show text in right-to-left direction. Please define following.
+```swift
+showcase.primaryTextAlignment = .right
+showcase.secondaryTextAlignment = .right
+```
 
-#### Customize UI properties
+### Dismiss showcase only if users click to target view
+In default, showcase will be dismissed when users click to any place in whole showcase view.
+If you want to dismiss showcase only when users click to target view correctly, please set the following property.
+```swift
+showcase.isTapRecognizerForTagretView = true
+```
+
+### Customize UI properties
 You can define your own styles based on your app.
 ```swift
   // Background
@@ -87,18 +109,15 @@ You can define your own styles based on your app.
   showcase.secondaryTextSize = 15
   showcase.primaryTextFont = UIFont.boldSystemFont(ofSize: primaryTextSize)
   showcase.secondaryTextFont = UIFont.systemFont(ofSize: secondaryTextSize)
+  //Alignment
+  showcase.primaryTextAlignment = .left
+  showcase.secondaryTextAlignment = .left
   // Animation
   showcase.aniComeInDuration = 0.5 // unit: second
   showcase.aniGoOutDuration = 0.5 // unit: second
   showcase.aniRippleScale = 1.5 
   showcase.aniRippleColor = UIColor.white
   showcase.aniRippleAlpha = 0.2
-```
-#### Dismiss showcase only if users click to target view
-In default, showcase will be dismissed when users click to any place in whole showcase view.
-If you want to dismiss showcase only when users click to target view correctly, please set the following property.
-```swift
-  showcase.isTapRecognizerForTagretView = true
 ```
 
 For more information, please take a look at [sample app](/Sample).
