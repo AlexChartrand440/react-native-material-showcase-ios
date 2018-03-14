@@ -162,6 +162,11 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     if (targetTintColorValue != nil) {
         targetTintColor = [UIColor fromHexWithHexString: targetTintColorValue];
     }
+    NSString *targetHolderColorValue = [props objectForKey:@"targetHolderColor"];
+    if (targetHolderColorValue != nil) {
+        targetHolderColor = [UIColor fromHexWithHexString: targetHolderColorValue];
+    }
+    
     
     if (targetTintColor != nil) {
         target.tintColor = targetTintColor;
@@ -175,11 +180,6 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         if (targetHolderRadiusValue >= 0) {
             [materialShowcase setTargetHolderRadius: targetHolderRadiusValue];
         }
-    }
-    
-    NSString *targetHolderColorValue = [props objectForKey:@"targetHolderColor"];
-    if (targetHolderColorValue != nil) {
-        targetHolderColor = [UIColor fromHexWithHexString: targetHolderColorValue];
     }
     
     BOOL *isTapRecognizerForTagretViewValue = [[props objectForKey:@"isTapRecognizerForTagretView"] boolValue];
@@ -285,3 +285,4 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
 }
 
 @end
+
